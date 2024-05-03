@@ -108,9 +108,9 @@ function App() {
         <Route
           path="/XX59"
           element={
-            <Header>
+            <HeaderDetail>
               <XX59 />
-            </Header>
+            </HeaderDetail>
           }
         />
         <Route

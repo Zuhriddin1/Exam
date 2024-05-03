@@ -1,6 +1,7 @@
 import { toast } from "react-toastify";
 import ears from "../assets/ears.svg";
 import "react-toastify/dist/ReactToastify.css";
+import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import speak from "../assets/Zx9.svg";
 import white from "../assets/white.svg";
@@ -19,7 +20,6 @@ function XX99MarkTwo() {
     fetch("http://localhost:3000/xx99-mark-two-headphones")
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         setMarkTwo(data);
       })
       .catch((err) => {
@@ -175,17 +175,18 @@ function XX99MarkTwo() {
                 see product
               </button>
             </div>
-            {/*  */}
             <div>
               <div className="w-[350px] mt-[64px] h-[318px] bg-[#F1F1F1] rounded-xl">
                 <img src={white} alt="" className="pt-[62px] pl-[80px]" />
               </div>
-              <h1 className="pl-[100px] pt-10 text-[24px] leading-[32.78px] tracking-[1.71px]">
-                XX99 MARK I
+              <h1 className="pl-[148px] pt-10 text-[24px] leading-[32.78px] tracking-[1.71px]">
+                XX59
               </h1>
-              <button className="text-white  ml-[113px] hover:bg-[#FBAF85] mt-[32px] btn bg-[#D87D4A]  uppercase">
-                see product
-              </button>
+              <Link to={"/XX59"}>
+                <button className="text-white  ml-[113px] hover:bg-[#FBAF85] mt-[32px] btn bg-[#D87D4A]  uppercase">
+                  see product
+                </button>
+              </Link>
             </div>
             <div>
               <div className="w-[350px] mt-[64px] h-[318px] bg-[#F1F1F1] rounded-xl">
@@ -195,8 +196,8 @@ function XX99MarkTwo() {
                   className="pt-[40px] w-[255px] h-[300px] pl-[100px]"
                 />
               </div>
-              <h1 className="pl-[100px] pt-10 text-[24px] leading-[32.78px] tracking-[1.71px]">
-                XX99 MARK I
+              <h1 className="uppercase pl-[100px] pt-10 text-[24px] leading-[32.78px] tracking-[1.71px]">
+                Zx9 speaker
               </h1>
               <button className="text-white  ml-[113px] hover:bg-[#FBAF85] mt-[32px] btn bg-[#D87D4A]  uppercase">
                 see product

@@ -1,6 +1,6 @@
 import { toast } from "react-toastify";
 import one from "../assets/markOne.svg";
-import tho from "../assets/twoNa.svg";
+  import tho from "../assets/twoNa.svg";
 import "react-toastify/dist/ReactToastify.css";
 import speak from "../assets/Zx9.svg";
 import white from "../assets/white.svg";
