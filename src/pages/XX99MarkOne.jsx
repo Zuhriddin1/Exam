@@ -1,12 +1,13 @@
 import { toast } from "react-toastify";
 import one from "../assets/markOne.svg";
-  import tho from "../assets/twoNa.svg";
+import tho from "../assets/twoNa.svg";
 import "react-toastify/dist/ReactToastify.css";
 import speak from "../assets/Zx9.svg";
 import white from "../assets/white.svg";
 import twoImg from "../assets/twoImg.svg";
 import oneImg from "../assets/oneImg.svg";
 import th from "../assets/Thith.svg";
+import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Footer from "../layout/Footer";
 import AudioPeople from "../components/AudioPeople";
@@ -162,9 +163,11 @@ function XX99MarkOne() {
             <h1 className="pl-[100px] pt-10 text-[24px] leading-[32.78px] tracking-[1.71px]">
               XX99 MARK II
             </h1>
-            <button className="text-white  ml-[113px] hover:bg-[#FBAF85] mt-[32px] btn bg-[#D87D4A]  uppercase">
-              see product
-            </button>
+            <Link to={"/XX99MarkII"}>
+              <button className="text-white  ml-[113px] hover:bg-[#FBAF85] mt-[32px] btn bg-[#D87D4A]  uppercase">
+                see product
+              </button>
+            </Link>
           </div>
           <div>
             <div className="w-[350px] mt-[64px] h-[318px] bg-[#F1F1F1] rounded-xl">
@@ -173,9 +176,11 @@ function XX99MarkOne() {
             <h1 className="pl-[145px] uppercase pt-10 text-[24px] leading-[32.78px] tracking-[1.71px]">
               XX59
             </h1>
-            <button className="text-white  ml-[113px] hover:bg-[#FBAF85] mt-[32px] btn bg-[#D87D4A]  uppercase">
-              see product
-            </button>
+            <Link to={"/XX59"}>
+              <button className="text-white  ml-[113px] hover:bg-[#FBAF85] mt-[32px] btn bg-[#D87D4A]  uppercase">
+                see product
+              </button>
+            </Link>
           </div>
           <div>
             <div className="w-[350px] mt-[64px] h-[318px] bg-[#F1F1F1] rounded-xl">
@@ -188,9 +193,11 @@ function XX99MarkOne() {
             <h1 className="uppercase pl-[100px] pt-10 text-[24px] leading-[32.78px] tracking-[1.71px]">
               ZX9 speaker
             </h1>
-            <button className="text-white  ml-[113px] hover:bg-[#FBAF85] mt-[32px] btn bg-[#D87D4A]  uppercase">
-              see product
-            </button>
+            <Link to={"/ZX9SPEAKER"}>
+              <button className="text-white  ml-[113px] hover:bg-[#FBAF85] mt-[32px] btn bg-[#D87D4A]  uppercase">
+                see product
+              </button>
+            </Link>
           </div>
         </div>
       </div>

@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 import Home from "./pages/Home";
 import Headphones from "./pages/Headphones";
-// import Speakers from "./pages/Speakers";
 import Speakers from "./pages/Speakers";
 import Earphones from "./pages/Earphones";
 import XX99MarkTwo from "./pages/XX99MarkTwo";
@@ -91,17 +90,17 @@ function App() {
         <Route
           path="/YX1Earphone"
           element={
-            <Header>
+            <HeaderDetail>
               <YX1Earphones />
-            </Header>
+            </HeaderDetail>
           }
         />
         <Route
           path="/ZX9SPEAKER"
           element={
-            <Header>
+            <HeaderDetail>
               <ZX9Speaker />
-            </Header>
+            </HeaderDetail>
           }
         />
 
@@ -116,9 +115,9 @@ function App() {
         <Route
           path="/ZX7Speaker"
           element={
-            <Header>
+            <HeaderDetail>
               <ZX7Speaker />
-            </Header>
+            </HeaderDetail>
           }
         />
         <Route path="*" element={<Error />} />
