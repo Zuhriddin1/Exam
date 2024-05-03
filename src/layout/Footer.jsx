@@ -2,10 +2,10 @@ import { Link } from "react-router-dom";
 import logo from "../assets/logoc.svg";
 function Footer() {
   return (
-    <div>
-      <footer className="footer p-8 text-white pl-[190px] bg-black">
+    <div className=" w-full bg-black">
+      <footer className="footer p-8 max-w-[1255px] mx-auto text-white  ">
         <aside>
-          <div className="foter-top flex justify-between">
+          <div className="foter-top max-w-[1110px] flex gap-10 justify-between">
             <img src={logo} alt="" />
             <ul className="flex gap-10">
               <Link to={"/"}>
@@ -13,12 +13,18 @@ function Footer() {
                   Home
                 </li>
               </Link>
+            </ul>
+            <ul>
               <Link to={"/headphones"}>
                 <li className="hover:text-[#D87D4A]">HEADPHONES</li>
               </Link>
+            </ul>
+            <ul>
               <Link to={"/speakers"}>
                 <li className="hover:text-[#D87D4A]">SPEAKERS</li>
               </Link>
+            </ul>
+            <ul>
               <Link to={"/earphones"}>
                 <li className="hover:text-[#D87D4A]">EARPHONES</li>
               </Link>

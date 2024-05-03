@@ -1,16 +1,25 @@
 import { toast } from "react-toastify";
+import ears from "../assets/ears.svg";
 import "react-toastify/dist/ReactToastify.css";
 import { useEffect, useState } from "react";
+import speak from "../assets/Zx9.svg";
+import white from "../assets/white.svg";
 import two from "../assets/two.svg";
-import { useNavigate } from "react-router-dom";
+import audio from "../assets/audio.svg";
+import work from "../assets/work.svg";
+import phones from "../assets/phones.svg";
+import ProductsNavigate from "../components/ProductsNavigate";
+import ProductsNav from "../components/ProductsNav";
+import ProductNavigate from "../components/ProductNavigate";
+import Footer from "../layout/Footer";
+import AudioPeople from "../components/AudioPeople";
 function XX99MarkTwo() {
-  const navigate = useNavigate();
   const [MarkTwo, setMarkTwo] = useState({});
   useEffect(() => {
     fetch("http://localhost:3000/xx99-mark-two-headphones")
       .then((res) => res.json())
       .then((data) => {
-        // console.log(data);
+        console.log(data);
         setMarkTwo(data);
       })
       .catch((err) => {
@@ -89,7 +98,7 @@ function XX99MarkTwo() {
                 </p>
                 <button
                   onClick={handleAdd}
-                  className="uppercase text-white btn hover:bg-[#FBAF85] mt-[40px] bg-[#D87D4A]"
+                  className="uppercase text-white btn hover:bg-[#FBAF85] mt-[40px] bg-[#D87D4A] "
                 >
                   add to card
                 </button>
@@ -117,22 +126,98 @@ function XX99MarkTwo() {
             </h1>
             <ul className="list-disc gap-2 pl-5">
               {MarkTwo.includes &&
-                MarkTwo.includes.map((item, index) => (
+                MarkTwo.includes.map((el, index) => (
                   <div className="flex gap-1">
                     <>
                       <li
                         key={index}
                         className="list-none mt-3   text-[#D87D4A]"
                       >
-                        {item.quantity}
+                        {el.quantity}
                       </li>
-                      <p className="text-[#D87D4A] mt-3">x</p>{" "}
-                      <span className="pl-4 mt-3">{item.item}</span>
+                      <p className="text-[#D87D4A] mt-3">x</p>
+                      <span className="pl-4 mt-3">{el.item}</span>
                     </>
                   </div>
                 ))}
             </ul>
           </div>
+        </div>
+        <div className="img-side flex ml-[220px] mt-[399px]">
+          <div className="one-side flex flex-col gap-8">
+            <img src={audio} className="" alt="" />
+            {/* w-[450px] pt-3 h-[280px] */}
+            <img className="" src={work} alt="" />
+          </div>
+          <div className="secound-side ">
+            <img src={phones} className="pl-8 " alt="" />
+            {/* w-[635px] h-[592px] */}
+          </div>
+        </div>
+        <div className="w-[1110px] ml-[220px] h-[571px] mt-[160px]">
+          <h1 className="uppercase pl-[400px] font-bold text-[32px] leading-[36px] tracking-[1.14px]">
+            you may also like
+          </h1>
+          {/*  */}
+          <div className="w-[1110px] h-[471px] flex gap-8 mt-8 items-center justify-center">
+            <div>
+              <div className="w-[350px] mt-[64px] h-[318px] bg-[#F1F1F1] rounded-xl">
+                <img
+                  src={ears}
+                  alt=""
+                  className="translate-x-24 translate-y-16 w-[148px] h-[193px] "
+                />
+              </div>
+              <h1 className="pl-[100px] pt-10 text-[24px] leading-[32.78px] tracking-[1.71px]">
+                XX99 MARK I
+              </h1>
+              <button className="text-white  ml-[113px] hover:bg-[#FBAF85] mt-[32px] btn bg-[#D87D4A]  uppercase">
+                see product
+              </button>
+            </div>
+            {/*  */}
+            <div>
+              <div className="w-[350px] mt-[64px] h-[318px] bg-[#F1F1F1] rounded-xl">
+                <img src={white} alt="" className="pt-[62px] pl-[80px]" />
+              </div>
+              <h1 className="pl-[100px] pt-10 text-[24px] leading-[32.78px] tracking-[1.71px]">
+                XX99 MARK I
+              </h1>
+              <button className="text-white  ml-[113px] hover:bg-[#FBAF85] mt-[32px] btn bg-[#D87D4A]  uppercase">
+                see product
+              </button>
+            </div>
+            <div>
+              <div className="w-[350px] mt-[64px] h-[318px] bg-[#F1F1F1] rounded-xl">
+                <img
+                  src={speak}
+                  alt=""
+                  className="pt-[40px] w-[255px] h-[300px] pl-[100px]"
+                />
+              </div>
+              <h1 className="pl-[100px] pt-10 text-[24px] leading-[32.78px] tracking-[1.71px]">
+                XX99 MARK I
+              </h1>
+              <button className="text-white  ml-[113px] hover:bg-[#FBAF85] mt-[32px] btn bg-[#D87D4A]  uppercase">
+                see product
+              </button>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div className="w-1 rounded-2xl ml-[220px] mt-[250px]">
+            <div className="flex gap-7">
+              <ProductsNavigate></ProductsNavigate>
+              <ProductsNav></ProductsNav>
+              <ProductNavigate></ProductNavigate>
+            </div>
+          </div>
+        </div>
+        <div className="mt-[200px] ml-[190px]">
+          <AudioPeople></AudioPeople>
+        </div>
+        <div className="mt-[200px]">
+          <Footer></Footer>
         </div>
       </div>
     </>

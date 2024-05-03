@@ -83,9 +83,9 @@ function App() {
         <Route
           path="/XX99MarkI"
           element={
-            <Header>
+            <HeaderDetail>
               <XX99MarkOne />
-            </Header>
+            </HeaderDetail>
           }
         />
         <Route

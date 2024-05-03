@@ -7,9 +7,15 @@ function Register() {
   const navigate = useNavigate();
   function handleSubmit(e) {
     e.preventDefault();
+    const username = userNameRef.current.value.trim();
+    const password = userPasswordRef.current.value.trim();
+    if (!username || !password) {
+      setError("Please enter username and password");
+      return;
+    }
     const newUser = {
-      username: userNameRef.current.value,
-      password: userPasswordRef.current.value,
+      username: username,
+      password: password,
     };
     const storedUser = JSON.parse(localStorage.getItem("user"));
     if (storedUser && storedUser.username === newUser.username) {
