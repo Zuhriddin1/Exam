@@ -61,7 +61,7 @@ function Login() {
             </button>
             <button
               className="btn bg-[#F1F1F1] text-black mt-3 btn-outline btn-block uppercase"
-              type="button" // Change type to "button" here
+              type="button" 
               onClick={handleClick}
             >
               Guest user
