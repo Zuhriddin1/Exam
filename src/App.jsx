@@ -16,6 +16,7 @@ import ZX7Speaker from "./pages/ZX7Speaker";
 import HeaderCa from "./components/HeaderCa";
 import XX59 from "./pages/XX59";
 import HeaderDetail from "./components/HeaderDetail";
+import Checkout from "./pages/Checkout";
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   useEffect(() => {
@@ -84,6 +85,14 @@ function App() {
           element={
             <HeaderDetail>
               <XX99MarkOne />
+            </HeaderDetail>
+          }
+        />
+        <Route
+          path="/CheckoutPage"
+          element={
+            <HeaderDetail>
+              <Checkout />
             </HeaderDetail>
           }
         />

@@ -10,7 +10,7 @@ import Footer from "../layout/Footer";
 function Home() {
   return (
     <>
-      <div className="w-full h-[729px]">
+      <div className="w-full  h-[729px]">
         <ProductsHome></ProductsHome>
       </div>
       <div className="w-1 rounded-2xl ml-[190px]">

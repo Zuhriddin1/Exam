@@ -14,7 +14,10 @@ import AudioPeople from "../components/AudioPeople";
 import ProductNavigate from "../components/ProductNavigate";
 import ProductsNav from "../components/ProductsNav";
 import ProductsNavigate from "../components/ProductsNavigate";
+import { addToBasket } from "../redux/BasketSlicer";
+import { useDispatch } from "react-redux";
 function XX99MarkOne() {
+  const dispathch = useDispatch();
   const [MarkOne, setMarkOne] = useState({});
   const [counter, setCounter] = useState(1);
   function handleIncrement() {
@@ -46,6 +49,12 @@ function XX99MarkOne() {
         toast.success("This product is added to the basket");
       }, 0);
     }, 600);
+    let dataBase = {
+      name: MarkOne.name,
+      price: MarkOne.price,
+      image: one,
+    };
+    dispathch(addToBasket(dataBase));
   }
   return (
     <div>

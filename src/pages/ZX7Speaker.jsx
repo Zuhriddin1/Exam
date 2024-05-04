@@ -14,9 +14,18 @@ import ProductsNav from "../components/ProductsNav";
 import ProductNavigate from "../components/ProductNavigate";
 import Footer from "../layout/Footer";
 import AudioPeople from "../components/AudioPeople";
+import { useDispatch } from "react-redux";
+import { addToBasket } from "../redux/BasketSlicer";
 function Zx7SPEAKER() {
   const [Zx7, setZx7] = useState({});
+  const dispathch = useDispatch();
   const [counter, setCounter] = useState(1);
+  function handleIncrement() {
+    setCounter(counter + 1);
+  }
+  function handleDecrement() {
+    setCounter(counter > 1 ? counter - 1 : 1);
+  }
   useEffect(() => {
     fetch("http://localhost:3000/zx7-speaker")
       .then((res) => res.json())
@@ -40,6 +49,12 @@ function Zx7SPEAKER() {
         toast.success("This product is added to the basket");
       }, 0);
     }, 600);
+    let dataBase = {
+      name: Zx7.name,
+      price: Zx7.price,
+      image: speakZx7,
+    };
+    dispathch(addToBasket(dataBase));
   }
   return (
     <>

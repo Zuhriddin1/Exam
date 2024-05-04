@@ -14,8 +14,11 @@ import ProductsNav from "../components/ProductsNav";
 import ProductNavigate from "../components/ProductNavigate";
 import Footer from "../layout/Footer";
 import AudioPeople from "../components/AudioPeople";
+import { useDispatch } from "react-redux";
+import { addToBasket } from "../redux/BasketSlicer";
 function Zx9SPEAKER() {
   const [MarkTwo, setMarkTwo] = useState({});
+  const dispathch = useDispatch();
   const [counter, setCounter] = useState(1);
   function handleIncrement() {
     setCounter(counter + 1);
@@ -46,6 +49,12 @@ function Zx9SPEAKER() {
         toast.success("This product is added to the basket");
       }, 0);
     }, 600);
+    let dataBase = {
+      name: MarkTwo.name,
+      price: MarkTwo.price,
+      image: speak,
+    };
+    dispathch(addToBasket(dataBase));
   }
   return (
     <>
@@ -175,7 +184,6 @@ function Zx9SPEAKER() {
           <h1 className="uppercase pl-[400px] font-bold text-[32px] leading-[36px] tracking-[1.14px]">
             you may also like
           </h1>
-          {/*  */}
           <div className="w-[1110px] h-[471px] flex gap-8 mt-8 items-center justify-center">
             <div>
               <div className="w-[350px] mt-[64px] h-[318px] bg-[#F1F1F1] rounded-xl">

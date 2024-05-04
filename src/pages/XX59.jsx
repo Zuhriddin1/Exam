@@ -14,6 +14,8 @@ import ProductsNav from "../components/ProductsNav";
 import ProductNavigate from "../components/ProductNavigate";
 import Footer from "../layout/Footer";
 import AudioPeople from "../components/AudioPeople";
+import { useDispatch } from "react-redux";
+import { addToBasket } from "../redux/BasketSlicer";
 function XX59() {
   const [MarkTwo, setMarkTwo] = useState({});
   const [counter, setCounter] = useState(1);
@@ -23,6 +25,7 @@ function XX59() {
   function handleDecrement() {
     setCounter(counter > 1 ? counter - 1 : 1);
   }
+  const dispathch = useDispatch();
   useEffect(() => {
     fetch("http://localhost:3000/xx59-headphones")
       .then((res) => res.json())
@@ -46,6 +49,13 @@ function XX59() {
         toast.success("This product is added to the basket");
       }, 0);
     }, 600);
+
+    let dataBase = {
+      name: MarkTwo.name,
+      price: MarkTwo.price,
+      image: xx59,
+    };
+    dispathch(addToBasket(dataBase));
   }
   return (
     <>

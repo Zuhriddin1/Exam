@@ -4,7 +4,6 @@ function Login() {
   const userPasswordRef = useRef("");
   const userNameRef = useRef("");
   const navigate = useNavigate();
-  // const [error, setError] = useState("");
   function handleSubmit(e) {
     e.preventDefault();
     const storedUser = JSON.parse(localStorage.getItem("user"));

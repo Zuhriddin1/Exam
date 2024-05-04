@@ -11,6 +11,7 @@ function Speakers() {
   const navigate = useNavigate();
   const [Zx9, setZx9] = useState({});
   const [Zx7, setZx7] = useState({});
+
   useEffect(() => {
     fetch("http://localhost:3000/zx9-speaker")
       .then((res) => res.json())

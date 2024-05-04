@@ -14,9 +14,13 @@ import ProductsNav from "../components/ProductsNav";
 import ProductNavigate from "../components/ProductNavigate";
 import Footer from "../layout/Footer";
 import AudioPeople from "../components/AudioPeople";
+import { useDispatch } from "react-redux";
+import { addToBasket } from "../redux/BasketSlicer";
 function YX1Earphones() {
   const [Zx7, setZx7] = useState({});
   const [counter, setCounter] = useState(1);
+  const [MarkTwo, setMarkTwo] = useState({});
+  const dispathch = useDispatch();
   function handleIncrement() {
     setCounter(counter + 1);
   }
@@ -46,6 +50,12 @@ function YX1Earphones() {
         toast.success("Item 'YX1 Wireless Earphones' was added to cart");
       }, 0);
     }, 600);
+    let dataBase = {
+      name: Zx7.name,
+      price: Zx7.price,
+      image: huba,
+    };
+    dispathch(addToBasket(dataBase));
   }
   return (
     <>
@@ -77,7 +87,7 @@ function YX1Earphones() {
         </div>
         <div>
           <div className="w-[1110px] flex h-[560px] pt-[100px] ml-[185px]">
-            <div className="left-side w-[440px] h-[460px] mt-[50px] bg-[#F1F1F1] rounded-2xl ">
+            <div className="left-side felx w-[440px] h-[460px] mt-[50px] bg-[#F1F1F1] rounded-2xl ">
               <img
                 src={huba}
                 className="w-[500.24px] pt-[95px] pl-[0px] h-[386px]"
@@ -95,12 +105,14 @@ function YX1Earphones() {
                     ""
                   )}
                 </span>
-                <h1 className="font-bold pt-[16px] text-[40px] leading-[44px] tracking-[1.43px]">
-                  {Zx7.name}
-                </h1>
-                <p className="pt-[45px] text-[15px] leading-[25px]">
-                  {Zx7.description}
-                </p>
+                <div className="flex">
+                  <h1 className="font-bold pt-[16px] text-[40px] leading-[44px] tracking-[1.43px]">
+                    {Zx7.name}
+                  </h1>
+                  <p className="pt-[45px] text-[15px] leading-[25px]">
+                    {Zx7.description}
+                  </p>
+                </div>
                 <p className="pt-[20px] text-[18px] leading-[25px] font-bold tracking-[1.29px]">
                   $ {numberWithCommas(Zx7.price ?? 0)}
                 </p>

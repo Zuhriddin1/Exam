@@ -14,6 +14,8 @@ import ProductsNav from "../components/ProductsNav";
 import ProductNavigate from "../components/ProductNavigate";
 import Footer from "../layout/Footer";
 import AudioPeople from "../components/AudioPeople";
+import { addToBasket } from "../redux/BasketSlicer";
+import { useDispatch } from "react-redux";
 function XX99MarkTwo() {
   const [MarkTwo, setMarkTwo] = useState({});
   useEffect(() => {
@@ -26,6 +28,7 @@ function XX99MarkTwo() {
         console.log(err);
       });
   }, []);
+  const dispathch = useDispatch();
   const [counter, setCounter] = useState(1);
   function handleIncrement() {
     setCounter(counter + 1);
@@ -46,6 +49,12 @@ function XX99MarkTwo() {
         toast.success("This product is added to the basket");
       }, 0);
     }, 600);
+    let dataBase = {
+      name: MarkTwo.name,
+      price: MarkTwo.price,
+      image: two,
+    };
+    dispathch(addToBasket(dataBase));
   }
   return (
     <>
