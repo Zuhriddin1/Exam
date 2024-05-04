@@ -16,6 +16,13 @@ import Footer from "../layout/Footer";
 import AudioPeople from "../components/AudioPeople";
 function XX59() {
   const [MarkTwo, setMarkTwo] = useState({});
+  const [counter, setCounter] = useState(1);
+  function handleIncrement() {
+    setCounter(counter + 1);
+  }
+  function handleDecrement() {
+    setCounter(counter > 1 ? counter - 1 : 1);
+  }
   useEffect(() => {
     fetch("http://localhost:3000/xx59-headphones")
       .then((res) => res.json())
@@ -33,6 +40,7 @@ function XX59() {
     window.history.back();
   }
   function handleAdd() {
+    setCounter(1);
     setTimeout(() => {
       setTimeout(() => {
         toast.success("This product is added to the basket");
@@ -96,12 +104,23 @@ function XX59() {
                 <p className="pt-[20px] text-[18px] leading-[25px] font-bold tracking-[1.29px]">
                   $ {numberWithCommas(MarkTwo.price ?? 0)}
                 </p>
-                <button
-                  onClick={handleAdd}
-                  className="uppercase text-white btn hover:bg-[#FBAF85] mt-[40px] bg-[#D87D4A] "
-                >
-                  add to card
-                </button>
+                <div className="flex">
+                  <div className="w-[120px] h-[48px] bg-[#F1F1F1] flex p-2 items-center rounded-xl translate-y-10 mr-[25px] justify-between">
+                    <button className="text-lg" onClick={handleIncrement}>
+                      +
+                    </button>
+                    <p>{counter}</p>
+                    <button className="text-lg" onClick={handleDecrement}>
+                      -
+                    </button>
+                  </div>
+                  <button
+                    onClick={handleAdd}
+                    className="uppercase text-white btn hover:bg-[#FBAF85] mt-[40px] bg-[#D87D4A] "
+                  >
+                    add to card
+                  </button>
+                </div>
               </div>
             </div>
           </div>

@@ -16,6 +16,13 @@ import Footer from "../layout/Footer";
 import AudioPeople from "../components/AudioPeople";
 function YX1Earphones() {
   const [Zx7, setZx7] = useState({});
+  const [counter, setCounter] = useState(1);
+  function handleIncrement() {
+    setCounter(counter + 1);
+  }
+  function handleDecrement() {
+    setCounter(counter > 1 ? counter - 1 : 1);
+  }
   useEffect(() => {
     fetch("http://localhost:3000/yx1-earphones")
       .then((res) => res.json())
@@ -33,9 +40,10 @@ function YX1Earphones() {
     window.history.back();
   }
   function handleAdd() {
+    setCounter(1);
     setTimeout(() => {
       setTimeout(() => {
-        toast.success("This product is added to the basket");
+        toast.success("Item 'YX1 Wireless Earphones' was added to cart");
       }, 0);
     }, 600);
   }
@@ -96,12 +104,23 @@ function YX1Earphones() {
                 <p className="pt-[20px] text-[18px] leading-[25px] font-bold tracking-[1.29px]">
                   $ {numberWithCommas(Zx7.price ?? 0)}
                 </p>
-                <button
-                  onClick={handleAdd}
-                  className="uppercase text-white btn hover:bg-[#FBAF85] mt-[40px] bg-[#D87D4A] "
-                >
-                  add to card
-                </button>
+                <div className="flex">
+                  <div className="w-[120px] h-[48px] bg-[#F1F1F1] flex p-2 items-center rounded-xl translate-y-10 mr-[25px] justify-between">
+                    <button className="text-lg" onClick={handleIncrement}>
+                      +
+                    </button>
+                    <p>{counter}</p>
+                    <button className="text-lg" onClick={handleDecrement}>
+                      -
+                    </button>
+                  </div>
+                  <button
+                    onClick={handleAdd}
+                    className="uppercase text-white btn hover:bg-[#FBAF85] mt-[40px] bg-[#D87D4A] "
+                  >
+                    add to card
+                  </button>
+                </div>
               </div>
             </div>
           </div>
@@ -156,7 +175,6 @@ function YX1Earphones() {
           <h1 className="uppercase pl-[400px] font-bold text-[32px] leading-[36px] tracking-[1.14px]">
             you may also like
           </h1>
-          {/*  */}
           <div className="w-[1110px] h-[471px] flex gap-8 mt-8 items-center justify-center">
             <div>
               <div className="w-[350px] mt-[64px] h-[318px] bg-[#F1F1F1] rounded-xl">
