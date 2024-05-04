@@ -95,7 +95,6 @@ function Headphones() {
             </div>
           </div>
         </div>
-        {/* MarkOne */}
         <div className="w-[1110px] flex h-[560px] pt-[170px] ml-[185px]">
           <div className="right pt-[70px]">
             <div className="w-[600px] pt-[0px] pl-[50px] pr-10 h-[343px]">
@@ -130,7 +129,6 @@ function Headphones() {
             />
           </div>
         </div>
-        {/* XX59 */}
         <div className="w-[1110px] flex h-[560px] pt-[170px] ml-[185px]">
           <div className="left-side w-[440px] h-[460px] mt-[50px] bg-[#F1F1F1] rounded-2xl ">
             <img
