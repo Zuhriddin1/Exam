@@ -14,7 +14,6 @@ function ProductsHome() {
         steyx1(data);
       });
   }, []);
-  console.log(yx1);
   return (
     <>
       <div className="ml-[200px] mr-[200px]  w-[398px] h-[346px] pt-[171px] hero-left  flex flex-col">

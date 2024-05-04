@@ -186,7 +186,7 @@ function Zx7SPEAKER() {
               <h1 className="pl-[98px] pt-10 text-[24px] leading-[32.78px] tracking-[1.71px]">
                 XX99 Mark I
               </h1>
-              <Link to={"/XX59"}>
+              <Link to={"/XX99MarkI"}>
                 <button className="text-white  ml-[113px] hover:bg-[#FBAF85] mt-[32px] btn bg-[#D87D4A]  uppercase">
                   see product
                 </button>

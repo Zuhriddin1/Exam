@@ -146,12 +146,10 @@ function XX99MarkTwo() {
         <div className="img-side flex ml-[220px] mt-[399px]">
           <div className="one-side flex flex-col gap-8">
             <img src={audio} className="" alt="" />
-            {/* w-[450px] pt-3 h-[280px] */}
             <img className="" src={work} alt="" />
           </div>
           <div className="secound-side ">
             <img src={phones} className="pl-8 " alt="" />
-            {/* w-[635px] h-[592px] */}
           </div>
         </div>
         <div className="w-[1110px] ml-[220px] h-[571px] mt-[160px]">
@@ -171,9 +169,11 @@ function XX99MarkTwo() {
               <h1 className="pl-[100px] pt-10 text-[24px] leading-[32.78px] tracking-[1.71px]">
                 XX99 MARK I
               </h1>
-              <button className="text-white  ml-[113px] hover:bg-[#FBAF85] mt-[32px] btn bg-[#D87D4A]  uppercase">
-                see product
-              </button>
+              <Link to={"/XX99MarkI"}>
+                <button className="text-white  ml-[113px] hover:bg-[#FBAF85] mt-[32px] btn bg-[#D87D4A]  uppercase">
+                  see product
+                </button>
+              </Link>
             </div>
             <div>
               <div className="w-[350px] mt-[64px] h-[318px] bg-[#F1F1F1] rounded-xl">
@@ -199,9 +199,11 @@ function XX99MarkTwo() {
               <h1 className="uppercase pl-[100px] pt-10 text-[24px] leading-[32.78px] tracking-[1.71px]">
                 Zx9 speaker
               </h1>
-              <button className="text-white  ml-[113px] hover:bg-[#FBAF85] mt-[32px] btn bg-[#D87D4A]  uppercase">
-                see product
-              </button>
+              <Link to={"/ZX9SPEAKER"}>
+                <button className="text-white  ml-[113px] hover:bg-[#FBAF85] mt-[32px] btn bg-[#D87D4A]  uppercase">
+                  see product
+                </button>
+              </Link>
             </div>
           </div>
         </div>

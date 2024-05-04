@@ -191,17 +191,19 @@ function Zx9SPEAKER() {
             <div>
               <div className="w-[350px] mt-[64px] h-[318px] bg-[#F1F1F1] rounded-xl">
                 <img
-                  src={speak}
+                  src={ears}
                   alt=""
                   className="pt-[40px] w-[255px] h-[300px] pl-[100px]"
                 />
               </div>
               <h1 className="uppercase pl-[100px] pt-10 text-[24px] leading-[32.78px] tracking-[1.71px]">
-                Zx9 speaker
+                XX99 Mark I
               </h1>
-              <button className="text-white  ml-[113px] hover:bg-[#FBAF85] mt-[32px] btn bg-[#D87D4A]  uppercase">
-                see product
-              </button>
+              <Link to={"/XX99MarkI"}>
+                <button className="text-white  ml-[113px] hover:bg-[#FBAF85] mt-[32px] btn bg-[#D87D4A]  uppercase">
+                  see product
+                </button>
+              </Link>
             </div>
           </div>
         </div>

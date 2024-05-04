@@ -201,9 +201,9 @@ function YX1Earphones() {
                 />
               </div>
               <h1 className="uppercase pl-[100px] pt-10 text-[24px] leading-[32.78px] tracking-[1.71px]">
-                Zx7 speaker
+                Zx9 speaker
               </h1>
-              <Link to={"//ZX9SPEAKER"}>
+              <Link to={"/ZX9SPEAKER"}>
                 <button className="text-white  ml-[113px] hover:bg-[#FBAF85] mt-[32px] btn bg-[#D87D4A]  uppercase">
                   see product
                 </button>
