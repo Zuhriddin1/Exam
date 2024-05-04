@@ -19,7 +19,6 @@ import { addToBasket } from "../redux/BasketSlicer";
 function YX1Earphones() {
   const [Zx7, setZx7] = useState({});
   const [counter, setCounter] = useState(1);
-  const [MarkTwo, setMarkTwo] = useState({});
   const dispathch = useDispatch();
   function handleIncrement() {
     setCounter(counter + 1);

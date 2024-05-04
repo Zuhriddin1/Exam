@@ -10,7 +10,7 @@ function HeaderSideCa() {
   const [counter, setCounter] = useState(1);
   let totalPrice = 0;
   products.forEach((product) => {
-    const unitPrice = 10;
+    const unitPrice = 1000;
     totalPrice += unitPrice * counter;
   });
   function handleIncrement() {
@@ -109,7 +109,7 @@ function HeaderSideCa() {
                   </div>
                   <p className="cursor-help">
                     {!totalProducts ? <span>Your Basket is empty</span> : ""}
-                  </p> 
+                  </p>
                   <div className="flex flex-col justify-between items-center">
                     {products.map((product, index) => (
                       <div key={index} className="flex pt-5 justify-between ">
@@ -182,5 +182,4 @@ function HeaderSideCa() {
     </>
   );
 }
-
 export default HeaderSideCa;

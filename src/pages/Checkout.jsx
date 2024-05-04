@@ -9,6 +9,10 @@ function Checkout() {
   function handleClick() {
     window.history.back();
   }
+  let totalPrice = 0;
+  products.forEach((product) => {
+    totalPrice += product.price;
+  });
   return (
     <>
       <div className="flex relative">
@@ -233,8 +237,7 @@ function Checkout() {
                       <div className="bg-black w-[198px] translate-y-8 rounded-xl pt-[43px] pl-[32px] h-[130px]">
                         <p>GRAND TOTAL</p>
                         <span>
-                          ${" "}
-                          {products.reduce((acc, curr) => acc + curr.price, 0)}
+                          $ {totalPrice}
                         </span>
                       </div>
                     </div>
