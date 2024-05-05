@@ -26,10 +26,7 @@ function App() {
     }
   }, []);
   function ProtectedRoute({ element }) {
-    ///////////////////////////////////
-    ////////////////////////////////////
-    /////login alooooooooooooo//////////
-    return isAuthenticated ? element : <Navigate to="" />;
+    return isAuthenticated ? element : <Navigate to="/login" />;
   }
   return (
     <>
